@@ -32,10 +32,9 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
 
   ### Je ambitie: 
   Aan deze technieken/punten wil ik werken:
-  - punt 1
-  - punt 2
-  - nog een punt
-  - ...
+  - Volledig animeren met CSS
+  - Visuals creëren met CSS
+  - Complexere CSS kunnen gebruiken en begrijpen
  
 </details>
 
