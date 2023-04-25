@@ -1,5 +1,5 @@
 # Procesverslag
-**Auteur:** -jouw naam-
+**Auteur:** Cherlyn
 
 **De opdrachten:** [opdracht 1](opdracht1/index.html) en [opdracht 2](opdracht2/index.html)
 
@@ -25,6 +25,7 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
 <details open>
   <summary>uitwerken na schetsen idee (voor week 2)</summary>
 
+  ### Schetsen idee:
 
   ### Je storyboard:
   <img src="readme-images/dummy-plaatje.svg" width="375px" alt="storyboard voor opdracht 1">
