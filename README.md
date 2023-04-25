@@ -26,6 +26,9 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   <summary>uitwerken na schetsen idee (voor week 2)</summary>
 
   ### Schetsen idee:
+  <img src="readme-images/idee2.jpg" width="375px" alt="idee 2">
+  <img src="readme-images/idee1.jpg" width="375px" alt="idee 1">
+  
 
   ### Je storyboard:
   <img src="readme-images/dummy-plaatje.svg" width="375px" alt="storyboard voor opdracht 1">
