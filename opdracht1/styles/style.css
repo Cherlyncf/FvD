@@ -1,20 +1,14 @@
-/* CSS Document */
-
 /*********/
 /* FONTS */
 /*********/
 @font-face {
-	font-family: 'eenfont';
-	src: url('../fonts/eenfont.woff2') format('woff2'),
-			 url('../fonts/eenfont.woff') format('woff');
-	font-weight: normal;
+	font-family: 'Archivo';
 	font-style: normal;
-
-}
-
-
-
-
+	font-weight: 900;
+	font-stretch: 125%;
+	src: url(https://fonts.gstatic.com/s/archivo/v18/k3k6o8UDI-1M0wlSV9XAw6lQkqWY8Q8EsJaRE-NWIDdgffTTnTRZ-BdpBU7iVNRQGG4.woff2) format('woff2');
+	unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+  }
 
 /**************/
 /* CSS REMEDY */
@@ -28,30 +22,189 @@ button:not(:disabled), summary {
 }
 
 
-
-
-
 /*********************/
 /* CUSTOM PROPERTIES */
 /*********************/
 :root {
-	/* startje */
-	--color-text:#111;
-	--color-background:#eee;
+	--color-text:#ffffff;
+	--color-text-vullen:#1c468d;
+	--color-text-line1:#1c468d;
+	--color-text-line2: #94d1eb;
+
+	--color-background: #1c468d;
+	--color-milk: #ffffff;
+	--background-milk-glass: #2c5498;
 }
 
-
-
-
-
 /****************/
-/* JOUW STYLING */
+/* STYLING */
 /****************/
+
+/* code van: https://codepen.io/shooft/pen/rNqmqga */
+
 body {
-  font-family:eenfont, sans-serif;
-  color:var(--color-text);
-  background-color:var(--color-background);
+	height:100vh;
+  	margin: 0;
+	
+	/* OREO staat in het midden van de pagina */
+	display:grid;
+	place-content:center;
+	background: var(--color-background);
 }
 
-/* jouw code */
+h1 {
+	font-family: 'Archivo', sans-serif;
+	font-size:4.5em;
+	
+	display:flex;	
+	flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+	align-items:center;
+	gap:.15em;
+}
 
+h1 span {
+	position: relative;
+	
+	color: var(--color-text);
+	/* om het gaatje van de O's te vullen*/
+	background-image:radial-gradient(circle, var(--color-text-vullen) .25em, transparent 0);
+}
+
+h1 span:nth-of-type(5) {
+	background-image: none;
+	margin-top: .5em;
+}
+
+/* voor de donkere rand */
+h1 span::after {
+	/* de letter die in de html staat wordt gebruikt als letter voor de before en after */
+	content:attr(letter);
+ 	/* de after staat op dezelfde plek als de span waar hij inzit	*/
+	position:absolute;
+	left:0;
+	top:0;
+	/* om de outline te trekken*/
+	-webkit-text-stroke: 0.2em var(--color-text-line1); 
+	/* om de after achter de span waar hij inzit te plaatsen */
+	/* zo is allen de stroke naar buiten zichtbaar */
+	/* de stroke naar binnen wordt afgedekt door de span zelf*/
+	z-index:-1;
+}
+
+/* voor de lichte rand */
+h1 span::before {
+	content:attr(letter);
+	position:absolute;
+	left:0;
+	top:0;
+	-webkit-text-stroke: 0.3em var(--color-text-line2); 
+	z-index:-2;
+}
+
+h1:hover span {
+	animation-name: dip;
+	animation-duration: 7s;
+	animation-direction:normal;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in-out
+}
+
+/*Zodat het glas niet mee beweegt*/
+h1:hover span:nth-of-type(5) {
+	animation: none;
+}
+
+@keyframes dip {
+	0% {
+		transform:translatey(0);
+	}
+	25% {
+		transform:translatey(1.2em);
+	}
+	50% {
+		transform:translatey(1.2em);
+	}
+	75% {
+		transform:translatey(1.2em);
+	}
+	100% {
+		transform:translatey(0em);
+	}
+}
+
+h1:hover span:nth-of-type(1) {
+	animation-delay: 0s;
+}
+
+h1:hover span:nth-of-type(2) {
+	animation-delay: .5s;
+}
+
+h1:hover span:nth-of-type(3) {
+	animation-delay: 1s;
+}
+
+h1:hover span:nth-of-type(4) {
+	animation-delay: 1.5s;
+}
+
+/* glas melk styling*/
+/* code van: https://codepen.io/Spate/pen/gOGJMgG */
+.milk{
+	margin: auto;
+	position: relative;
+	width: 4.8em;
+	height: 3em;
+	background: var(--color-milk);
+	box-shadow: inset 0 0 3em #c5cfd3;
+	/* vorm van het glas*/
+	clip-path: polygon(0 0, 100% 0, 85% 100%, 15% 100%);
+}
+
+  /* styling van het glas zelf*/
+  .milk::before {
+	content: "";
+	width: 200%;
+	height: 185%;
+	background: var(--background-milk-glass);
+	position: absolute;
+	top: -170%;
+	left: -50%;
+	border-radius: 40%;
+
+	animation-name: milk;
+	animation-duration: 3s;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+  }
+  
+	/* styling melk*/
+  .milk::after {
+	content: "";
+	width: 204%;
+	height: 204%;
+	position: absolute;
+	top: -170%;
+	left: -52%;
+	border-radius: 40%;
+
+	animation-name: milk;
+	animation-duration: 3s;
+	animation-timing-function: linear;
+	animation-iteration-count: 1;	
+	animation-delay: 0.5s;
+  }
+  
+  @keyframes milk {
+	0% {
+	  transform: rotate(0deg);
+	}
+	50% {
+	  transform: rotate(7deg);
+	}
+	100% {
+		transform: rotate(0deg);
+	  }
+  }
