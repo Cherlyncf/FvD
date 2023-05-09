@@ -1,5 +1,5 @@
 # Procesverslag
-**Auteur:** Cherlyn
+**Auteur:** -jouw naam-
 
 **De opdrachten:** [opdracht 1](opdracht1/index.html) en [opdracht 2](opdracht2/index.html)
 
@@ -14,8 +14,8 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
 
 
 ## Bronnenlijst
-  1. -bron 1-
-  2. -bron 2-
+  1. Link code van letters: https://codepen.io/shooft/pen/rNqmqga
+  2. Link code van glas melk: https://codepen.io/Spate/pen/gOGJMgG
   3. -...-
 
 
@@ -25,13 +25,10 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
 <details open>
   <summary>uitwerken na schetsen idee (voor week 2)</summary>
 
-  ### Schetsen idee:
-  <img src="readme-images/idee2.jpg" width="375px" alt="idee 2">
-  <img src="readme-images/idee1.jpg" width="375px" alt="idee 1">
-  
 
   ### Je storyboard:
-  <img src="readme-images/dummy-plaatje.svg" width="375px" alt="storyboard voor opdracht 1">
+  <img src="readme-images/idee2.jpg" width="375px" alt="idee 2">
+  <img src="readme-images/idee1.jpg" width="375px" alt="idee 1">
 
 
   ### Je ambitie: 
