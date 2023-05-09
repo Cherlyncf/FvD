@@ -1,7 +1,7 @@
 # Procesverslag
 **Auteur:** Cherlyn Faré
 
-**De opdrachten:** [opdracht 1](opdracht1/file:///Users/cherlynfare/Desktop/Blok%204/Jaar%202/FvD/Week%201/basiswebsite/opdracht1/index.html) en [opdracht 2](opdracht2/index.html)
+**De opdrachten:** [opdracht 1](opdracht1/index.html) en [opdracht 2](opdracht2/index.html)
 
 
 Markdown is een simpele manier om HTML te schrijven.  
