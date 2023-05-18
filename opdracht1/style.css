@@ -43,7 +43,7 @@ button:not(:disabled), summary {
 /* code van: https://codepen.io/shooft/pen/rNqmqga */
 
 body {
-	height:100vh;
+	height:80vh;
   	margin: 0;
 	
 	/* OREO staat in het midden van de pagina */
@@ -111,6 +111,24 @@ h1:hover span {
 	animation-timing-function: ease-in-out
 }
 
+
+/* code per letter*/
+h1:hover span:nth-of-type(1) {
+	animation-delay: 0s;
+}
+
+h1:hover span:nth-of-type(2) {
+	animation-delay: .5s;
+}
+
+h1:hover span:nth-of-type(3) {
+	animation-delay: 1s;
+}
+
+h1:hover span:nth-of-type(4) {
+	animation-delay: 1.5s;
+}
+
 /*Zodat het glas niet mee beweegt*/
 h1:hover span:nth-of-type(5) {
 	animation: none;
@@ -134,55 +152,59 @@ h1:hover span:nth-of-type(5) {
 	}
 }
 
-h1:hover span:nth-of-type(1) {
-	animation-delay: 0s;
-}
-
-h1:hover span:nth-of-type(2) {
-	animation-delay: .5s;
-}
-
-h1:hover span:nth-of-type(3) {
-	animation-delay: 1s;
-}
-
-h1:hover span:nth-of-type(4) {
-	animation-delay: 1.5s;
-}
 
 /* glas melk styling*/
-/* code van: https://codepen.io/Spate/pen/gOGJMgG */
-.milk{
-	margin: auto;
-	position: relative;
+/* styling van het glas zelf*/
+
+/* Gedeeltelijke code van: https://codepen.io/Spate/pen/gOGJMgG */
+h1 span:nth-of-type(5){
+	margin-top: 320px;
+	position: absolute;
 	width: 4.8em;
 	height: 3em;
-	background: var(--color-milk);
-	box-shadow: inset 0 0 3em #c5cfd3;
-	/* vorm van het glas*/
+ 
+
 	clip-path: polygon(0 0, 100% 0, 85% 100%, 15% 100%);
+
+	background-color: rgba(255, 255, 255, 0.4);
+
 }
 
-  /* styling van het glas zelf*/
-  .milk::before {
+
+/* styling van de melk*/
+h1 span:nth-of-type(5)::before {
 	content: "";
-	width: 200%;
-	height: 185%;
+	width: 150%;
+	height: 100%;
 	background: var(--background-milk-glass);
+
+	background-color: var(--color-milk);
 	position: absolute;
-	top: -170%;
-	left: -50%;
-	border-radius: 40%;
+	top: 5%;
+	left: -25%;
+
+	clip-path: polygon(0 5%, 9% 13%, 36% 19%, 62% 19%, 85% 15%, 100% 4%, 93% 66%, 87% 100%, 15% 100%, 10% 67%);
 
 	animation-name: milk;
 	animation-duration: 3s;
 	animation-timing-function: linear;
 	animation-iteration-count: infinite;
+}
+@keyframes milk {
+	0% {
+	  transform: rotate(0deg);
+	}
+	50% {
+	  transform: rotate(7deg);
+	}
+	100% {
+	  transform: rotate(0deg);
+	}
   }
   
-	/* styling melk*/
-  .milk::after {
-	content: "";
+/* styling melk
+h1 span:nth-of-type(5)::after {
+	/* content: ""; 
 	width: 204%;
 	height: 204%;
 	position: absolute;
@@ -195,16 +217,5 @@ h1:hover span:nth-of-type(4) {
 	animation-timing-function: linear;
 	animation-iteration-count: 1;	
 	animation-delay: 0.5s;
-  }
+}
   
-  @keyframes milk {
-	0% {
-	  transform: rotate(0deg);
-	}
-	50% {
-	  transform: rotate(7deg);
-	}
-	100% {
-		transform: rotate(0deg);
-	  }
-  }
