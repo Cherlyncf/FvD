@@ -48,19 +48,19 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
 
 
   ### Je uitkomst - karakteristiek screenshot(s):
-  <img src="readme-images/groot-scherm.jpg" width="375px" alt="uitomst opdracht 1">
+  <img src="readme-images/groot-scherm.png" width="375px" alt="uitomst opdracht 1">
 
-  <img src="readme-images/letters-in-melk.jpg" width="375px" alt="uitomst opdracht 1">
+  <img src="readme-images/letters-in-melk.png" width="375px" alt="uitomst opdracht 1">
 
 
-  <img src="readme-images/letters-omhoog.jpg" width="375px" alt="uitomst opdracht 1">
+  <img src="readme-images/letters-omhoog.png" width="375px" alt="uitomst opdracht 1">
 
 
   ### Dit ging goed/Heb ik geleerd: 
   Het 1 voor 1 dippen van de letters in het glas melk ging goed en soepel.
   Om dit te doen heb ik elke letter een delay gegeven en heb ik geleerd hoe je zo'n animatie kan maken.
 
-  <img src="readme-images/letters-dippen.jpg" width="375px" alt="Letters dippen">
+  <img src="readme-images/letters-dippen.png" width="375px" alt="Letters dippen">
 
 
   ### Dit was lastig/Is niet gelukt:
@@ -72,7 +72,7 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   <img src="readme-images/idee2.jpg" width="375px" alt="bummer">
 
   Verder is het wel responsive, maar bij een bepaald scherm formaat verschuifd het werk even en daarna staat het weer goed. 
-  <img src="readme-images/responsive-fout.jpg" width="375px" alt="bummer">
+  <img src="readme-images/responsive-fout.png" width="375px" alt="bummer">
 </details>
 
 
