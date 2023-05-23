@@ -1,5 +1,5 @@
 # Procesverslag
-**Auteur:** -jouw naam-
+**Auteur:** Cherlyn Faré
 
 **De opdrachten:** [opdracht 1](opdracht1/index.html) en [opdracht 2](opdracht2/index.html)
 
@@ -16,14 +16,14 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
 ## Bronnenlijst
   1. Link code van letters: https://codepen.io/shooft/pen/rNqmqga
   2. Link code van glas melk: https://codepen.io/Spate/pen/gOGJMgG
-  3. -...-
+  3. Link van font: https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@125,900&display=swap
 
 
 
 ## Opdracht 1 plan
 
 <details open>
-  <summary>uitwerken na schetsen idee (voor week 2)</summary>
+  <summary>Uitwerken na schetsen idee (voor week 2)</summary>
 
 
   ### Je storyboard:
@@ -44,23 +44,35 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
 ## Opdracht 1 reflectie
 
 <details>
-  <summary>uitwerken bij afronden opdracht (voor week 4)</summary>
+  <summary>Uitwerken bij afronden opdracht (voor week 4)</summary>
 
 
   ### Je uitkomst - karakteristiek screenshot(s):
-  <img src="readme-images/dummy-plaatje.svg" width="375px" alt="uitomst opdracht 1">
+  <img src="readme-images/groot-scherm.jpg" width="375px" alt="uitomst opdracht 1">
+
+  <img src="readme-images/letters-in-melk.jpg" width="375px" alt="uitomst opdracht 1">
+
+
+  <img src="readme-images/letters-omhoog.jpg" width="375px" alt="uitomst opdracht 1">
 
 
   ### Dit ging goed/Heb ik geleerd: 
-  Korte omschrijving met plaatje(s)
+  Het 1 voor 1 dippen van de letters in het glas melk ging goed en soepel.
+  Om dit te doen heb ik elke letter een delay gegeven en heb ik geleerd hoe je zo'n animatie kan maken.
 
-  <img src="readme-images/dummy-plaatje.svg" width="375px" alt="top">
+  <img src="readme-images/letters-dippen.jpg" width="375px" alt="Letters dippen">
 
 
   ### Dit was lastig/Is niet gelukt:
   Korte omschrijving met plaatje(s)
+  Ik wou dat het glas melk van beneden naar boven in beeld kwam en dat lukte op een kleine scherm maar op een groot scherm niet. Op een groot scherm stonden alle spans naast elkaar en lukte het mij niet om het glas onder de letters te krijgen.
 
-  <img src="readme-images/dummy-plaatje.svg" width="375px" alt="bummer">
+  De letters laten afruipen na het dippen lukte mij ook niet, want ik kwam er niet uit hoe ik dat moest doen.
+
+  <img src="readme-images/idee2.jpg" width="375px" alt="bummer">
+
+  Verder is het wel responsive, maar bij een bepaald scherm formaat verschuifd het werk even en daarna staat het weer goed. 
+  <img src="readme-images/responsive-fout.jpg" width="375px" alt="bummer">
 </details>
 
 
