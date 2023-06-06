@@ -1,0 +1,208 @@
+/* CSS Document */
+
+/*********/
+/* FONTS */
+/*********/
+@font-face {
+	font-family: 'eenfont';
+	src: url('../fonts/eenfont.woff2') format('woff2'),
+			 url('../fonts/eenfont.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+
+}
+
+
+
+
+
+/**************/
+/* CSS REMEDY */
+/**************/
+*, *::after, *::before {
+  box-sizing:border-box;  
+  max-width: 100%;
+  margin: 0em;
+  padding: 0em;
+}
+
+button:not(:disabled), summary {
+	cursor: pointer;
+}
+
+
+
+
+
+/*********************/
+/* CUSTOM PROPERTIES */
+/*********************/
+:root {
+	/* startje */
+	--color-text:#111;
+	--color-background:#83e6a5;
+}
+
+
+
+
+
+/****************/
+/* JOUW STYLING */
+/****************/
+body {
+  font-family:eenfont, sans-serif;
+  color:var(--color-text);
+  background-color:var(--color-background);
+}
+
+/* jouw code */
+li {
+	list-style: none;
+}
+
+/*section 1*/
+
+h1 {
+	font-size: max(2.5vw, 1.6em);
+	padding: 2em .5em 0 .5em;
+	text-align: center;
+}
+
+section:nth-of-type(1) img:nth-of-type(1){
+	display: block;
+  	margin-left: auto;
+  	margin-right: auto;
+  	width: 3.5em;
+}
+
+section:nth-of-type(1) img:nth-of-type(2){
+	display: block;
+  	margin-left: auto;
+  	margin-right: auto;
+	max-width: 22em;
+	padding: 1em 1em;
+}
+
+/*section 1, grid*/
+main {
+	display:grid;
+    
+    grid-template-columns: repeat(auto-fit, minmax(min(32em, 100%), 1fr) );
+    column-gap: 5em;
+    
+    padding: 2.5em 1.5em;
+
+	}
+
+/*section 2*/
+
+
+h2:nth-of-type(1){
+	margin-bottom: .2em;
+}
+/*h2 en kleuren onder elkaar zetten*/
+section:nth-of-type(2) li:nth-of-type(2){
+	display: flex;
+}
+
+h2 {
+	font-size: 1em;
+}
+/*kleuren sectie*/
+input {
+	width: 0;
+}
+section:nth-of-type(2) {
+	display: grid;
+    grid-template-columns: repeat(2, 0fr);
+    grid-column-gap: 1.8em;
+    grid-row-gap: 1.8em;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+section:nth-of-type(2) ul:nth-of-type(1)
+input:nth-of-type(1) + label {
+	display: block;
+	background: red;
+	width: 2em;
+	height: 2em;
+	margin-right: 1em;
+
+}
+section:nth-of-type(2) ul:nth-of-type(1)
+input:nth-of-type(2) + label {
+	display: block;
+
+	background: blue;
+	width: 2em;
+	height: 2em;
+	margin-right: 1em;
+
+}
+section:nth-of-type(2) ul:nth-of-type(1)
+input:nth-of-type(3) + label {
+	display: block;
+
+	background: green;
+	width: 2em;
+	height: 2em;
+}
+input:checked + label {
+	border: 3px solid black;
+}
+
+/*print sectie*/
+section:nth-of-type(2) ul:nth-of-type(2)
+input:nth-of-type(1) + label{
+	display: block;
+	background: rgb(95, 81, 81);
+	width: 2em;
+	height: 2em;
+	margin-right: 1em;
+
+}
+
+section:nth-of-type(2) ul:nth-of-type(2)
+input:nth-of-type(2) + label {
+	display: block;
+
+	background: rgb(150, 23, 150);
+	width: 2em;
+	height: 2em;
+	margin-right: 1em;
+
+}
+section:nth-of-type(2) ul:nth-of-type(2)
+input:nth-of-type(3) + label {
+	display: block;
+
+	background: rgb(23, 150, 110);
+	width: 2em;
+	height: 2em;
+	margin-right: 1em;
+}
+/*input:checked + label {
+	border: 3px solid black;
+}*/
+
+
+/*tekst sectie*/
+
+input:last-of-type{
+	padding: 1em 8em 1em 1em;
+
+}
+
+/*knop sectie*/
+button {
+	padding: 1em 2em;
+}
+section:nth-of-type(2) ul:nth-of-type(4) {
+	display: flex;
+	justify-content: start;
+	padding-top: 1em;
+}
+
+
