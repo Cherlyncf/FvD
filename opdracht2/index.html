@@ -13,62 +13,77 @@
 </head>
 
 <body>
+	<header>
+		<h1>Ontwerp je eigen T-shirt!</h1>
+
+	</header>
 	<main>
 		<section>
 			<ul>
 				<li>
-					<h1>Ontwerp je eigen T-shirt!</h1>
-					<img src="images/favicon.svg" alt="">
-				</li>
-
-				<li>
-					<img src="images/favicon.svg" alt="">
-					<p></p>
+					<img src="images/turn-around-achter.png" alt="Achterkant T-shirt">
+					<p>Achterkant</p>
+					<svg version="1.1" id="voorkant" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 					viewBox="0 0 330.9 314.2" style="enable-background:new 0 0 330.9 314.2;" xml:space="preserve">
+						<style type="text/css">.st0{fill:#4A4A49;}.st1{fill:#1D1D1B;}
+						</style>
+						<path id="rechter-mouw" class="st0" d="M259.6,26.3c-1.5,79,5.9,92.6,5.9,92.6l0.3,33.7l22.6,12.4l41.6-51.5L259.6,26.3L259.6,26.3z"/>
+						<path id="linker-mouw" class="st0" d="M72.2,25.1c-0.5,0.6-71.1,88.5-71.1,88.5L43,165.1L66.9,152l0.5-40.9l1.5-6.9l2-15.4l0.8-10l0.5-10.6l0.3-9.2l-0.1-8.4l0.1-7.1V33.2C72.6,33.2,72.7,24.5,72.2,25.1L72.2,25.1L72.2,25.1z"/>
+						<path id="voorkant-achter" class="st0" d="M121.5,2l1-0.7l5.1,2.5c0,0,17.9,9.3,39.7,8.6c0,0,27.3,0.9,42.9-10.2l50,24.1c0,0-2.1,73.3,5.8,93.6l1.8,193.1H64.1l2.3-200.9c0,0,6.9-22.4,4.8-86.1l50.1-24.1"/>
+						<path id="voorkant-voor" class="st1" d="M265.9,119.6C258,99.4,260.1,26,260.1,26L210.3,1.6c0,0-5.9,33.3-44.7,33.7c-38.9,0.5-44.2-33.7-44.2-33.7L71.2,25.7c2.1,63.7-4.8,86.1-4.8,86.1l-2.3,200.9h203.6L265.9,119.6L265.9,119.6L265.9,119.6z"/>
+					</svg>
 				</li>
 			</ul>
 		</section>
 
-			<section>
-				<ul>
-				<li><h2>Kleur:</h2></li>
+		<section>
+			<ul>
+				<li><h2>Voorkant:</h2></li>
 				<li>
-					<input type="radio" id="kaas-1" name="kaas" /><label for="kaas-1">&nbsp;</label>
-					<input type="radio" id="kaas-2" name="kaas" /><label for="kaas-2">&nbsp;</label>
-					<input type="radio" id="kaas-3" name="kaas" /><label for="kaas-3">&nbsp;</label>
+					<input type="radio" id="kleur-voorkant-1" name="kleur" />
+						<label for="kleur-voorkant-1">&nbsp;</label>
+					<input type="radio" id="kleur-voorkant-2" name="kleur" />
+						<label for="kleur-voorkant-2">&nbsp;</label>
+					<input type="radio" id="kleur-voorkant-3" name="kleur" />
+						<label for="kleur-voorkant-3">&nbsp;</label>
+					<input type="radio" id="kleur-voorkant-4" name="kleur" />
+						<label for="kleur-voorkant-4">&nbsp;</label>
+					<input type="radio" id="kleur-voorkant-5" name="kleur" />
+						<label for="kleur-voorkant-5">&nbsp;</label>
+					<input type="radio" id="kleur-voorkant-6" name="kleur" />
+						<label for="kleur-voorkant-6">&nbsp;</label>
 				</li>
 			</ul>
 
-		
-
 			<ul>
-
-				<li><h2>Print:</h2></li>
-				<li>
-					<input type="radio" id="ham-1" name="ham" /><label for="ham">&nbsp;</label>
-					<input type="radio" id="ham-2" name="ham" /><label for="ham">&nbsp;</label>
-					<input type="radio" id="ham-3" name="ham" /><label for="ham">&nbsp;</label>
-				</li>
-			</ul>
-			<ul>
+				<li><h2>Binnenkant:</h2></li>
 				
+			</ul>
+
+			<ul>
+				<li><h2>Linker mouw:</h2></li>
+				
+			</ul>
+
+			<ul>
+				<li><h2>Rechter mouw:</h2></li>
+				
+			</ul>
+
+			<ul>
 				<li>
 					<h2>Tekst:</h2>
-					<input type="text" placeholder="Typ hier je tekst...">
-					<p>0/50</p>
+					<textarea rows="2" placeholder='Typ hier je tekst' maxlength='25' minlength='0'></textarea>
+					<p>0/25</p>
 				</li>
 			</ul>
 
 			<ul>
-
 				<li>
 					<button>Klaar</button>
 				</li>
 			</ul>
-			
 		</section>
-
-		<section></section>
-
 	</main>
 
 	<script defer src="scripts/script.js"></script>
