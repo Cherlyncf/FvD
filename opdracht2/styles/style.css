@@ -12,180 +12,215 @@
 
 }
 
-
-
-
-
 /**************/
 /* CSS REMEDY */
 /**************/
 *, *::after, *::before {
-  box-sizing:border-box;  
-  max-width: 100%;
-  margin: 0em;
-  padding: 0em;
-}
+	box-sizing:border-box;  
+	max-width: 100%;
+	margin: 0em;
+	padding: 0em;
+  }
 
 button:not(:disabled), summary {
 	cursor: pointer;
 }
 
-
-
-
-
 /*********************/
 /* CUSTOM PROPERTIES */
 /*********************/
 :root {
-	/* startje */
-	--color-text:#111;
-	--color-background:#eee;
+	/* algemeen */
+	--color-text-h1:#fff;
+	--color-text:#000;
+	--color-background:#f2e8d9;
+
+	/* header kleur */
+	--color-background-header: #ECA4B1;
+
+	/* selecteren en sorteren background kleur */
+	--color-background-section1: #B7C8C2;
+	
+	/* button kleur styling  */
+	--color-button: #fff;
+	--color-border-button: #d5d9d9;
+	--color-button-hover: #6d7c77;
+	--color-button-hover-text: #fff;
+	--color-button-focus: #ECA4B1;
+
+	/* schaduw van de foto's  */
+	--color-box-shadow-img: rgba(0, 0, 0, 0.22);
+
+
+	/* dark mode styling  */
+	--swiper-theme-color:#000;
+
+
 }
 
-
-
-
-
-/****************/
-/* JOUW STYLING */
-/****************/
+/*********************/
+/* algemene styling */
+/*******************/
 body {
-  font-family:eenfont, sans-serif;
+  font-family: eenfont, sans-serif;
+
   color:var(--color-text);
   background-color:var(--color-background);
 }
-
-/* jouw code */
-li {
-	list-style: none;
-}
-
-/*section 1*/
-
-h1 {
-	font-size: max(2.5vw, 1.6em);
-	padding-bottom: 1em;
-	text-align: center;
-}
-li:nth-of-type(1) img{
-	display: block;
-  	margin-left: auto;
-  	margin-right: auto;
-  	max-width: 6em;
-}
-
-li:nth-of-type(2) img{
-	display: block;
-  	margin-left: auto;
-  	margin-right: auto;
-	max-width: 30em;
+header {
+	position: sticky;
+	top: 0;
+	z-index: 100;
 
 	padding: 1em 1em;
+
+	background-color: var(--color-background-header);
 }
+h1 {
+	text-align: center;
 
-/*section 1, grid*/
-main{
-	display:grid;
-	
-	grid-template-columns: repeat(auto-fit, minmax(min(32em, 100%), 1fr) );
-	column-gap: 1em;
-	
-	padding: 1.5em 1.5em;
+	color:var(--color-text-h1);
 }
-
-
-/*section 2*/
-
-/*grid styling*/
-
-h2:nth-of-type(1){
-	margin-bottom: .2em;
+section {
+	padding: 1em;
 }
-/*h2 en kleuren onder elkaar zetten*/
-section:nth-of-type(2) li:nth-of-type(2){
+label {
+	margin-right: .5em;
+}
+img {
+	opacity: 1;
+}
+img:hover{
+	cursor: pointer;
+
+	background-color: rgba(150, 150, 150, 0.5);
+
+}
+/****************************/
+/* Section 1: carousel */
+/****************************/
+
+/****************************/
+/* Section 2: radio buttons */
+/****************************/
+section:nth-of-type(2){
 	display: flex;
+	justify-content: center;
+	position: sticky;
+	top: 4em;
+	z-index: 100;
+
+
+	padding-bottom: .5em;
+
+	background-color: var(--color-background-section1);
 }
 
-/*kleuren sectie*/
-input {
-	width: 0;
+/**************************/
+/* Section 3: sorteer op  */
+/**************************/
+section:nth-of-type(3){
+	display: flex;
+	justify-content: center;
+	position: sticky;
+		z-index: 100;
+
+	top: 6.7em;
+	padding-top: 0;
+	background-color: var(--color-background-section1);
+}
+aside {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
 }
 
-section:nth-of-type(2) ul:nth-of-type(1)
-input:nth-of-type(1) + label {
-	display: block;
-	background: red;
-	width: 2em;
-	height: 2em;
-	margin-right: 1em;
-
-}
-section:nth-of-type(2) ul:nth-of-type(1)
-input:nth-of-type(2) + label {
-	display: block;
-
-	background: blue;
-	width: 2em;
-	height: 2em;
-	margin-right: 1em;
-
-}
-section:nth-of-type(2) ul:nth-of-type(1)
-input:nth-of-type(3) + label {
-	display: block;
-
-	background: green;
-	width: 2em;
-	height: 2em;
-}
-input:checked + label {
-	border: 3px solid black;
+/* styling zodat op een kleine scherm de buttons onder elkaar staan */
+@media (max-width: 32em) {
+	
+	aside {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+	}
 }
 
-/*print sectie*/
-section:nth-of-type(2) ul:nth-of-type(2)
-input:nth-of-type(1) + label{
-	display: block;
-	background: rgb(95, 81, 81);
-	width: 2em;
-	height: 2em;
-	margin-right: 1em;
+/* button styling 
+section:nth-of-type(2) button{
+	padding: .5em 1em;
+	margin: .5em .5em;
 
+	border: .1em solid var(--color-border-button);
+	border-radius: .5em;
+	cursor: pointer;
+	background-color: var(--color-button);
 }
-
-section:nth-of-type(2) ul:nth-of-type(2)
-input:nth-of-type(2) + label {
-	display: block;
-
-	background: rgb(150, 23, 150);
-	width: 2em;
-	height: 2em;
-	margin-right: 1em;
-
+section:nth-of-type(2) button:hover {
+	color: var(--color-button-hover-text);
+  	background-color: var(--color-button-hover);
 }
-section:nth-of-type(2) ul:nth-of-type(2)
-input:nth-of-type(3) + label {
-	display: block;
-
-	background: rgb(23, 150, 110);
-	width: 2em;
-	height: 2em;
-	margin-right: 1em;
-}
-/*input:checked + label {
-	border: 3px solid black;
+section:nth-of-type(2) button:focus {
+	border: .2em solid var(--color-button-focus) ;
 }*/
 
+/************************/
+/* Section 4: de foto's */
+/************************/
+/* standaard grid view */
+ul {
+	display: grid;
+	grid-column-gap: 1em;
+	grid-row-gap: 1em;
+}
+li {
+	display: flex;
+	justify-content: center;
 
-/*tekst sectie*/
-
-input:last-of-type{
-	padding: 1em 12em 1em 1em;
-
+	list-style: none;
+	cursor:grab;
 }
 
-/*knop sectie*/
-button {
-	padding: 1em 2em;
+/* foto's hover styling */
+section:nth-of-type(4)li img {
+	opacity: .5;
+	transition: .3s ease-in-out;
 }
+section:nth-of-type(4) li img:hover {
+	opacity: .5;
+}
+
+/* Groote van de foto in een list view */
+section:nth-of-type(4) img {
+	max-width: 100%;
+
+	border-radius: 5%;
+
+	box-shadow: var(--color-box-shadow-img) 0px 3px 7px;
+}
+
+/* code url: https://codepen.io/shooft/pen/BaOwRBq */
+ul[data-view='gridView'] {
+	grid-template-columns:1fr 1fr 1fr;
+	grid-column-gap: 1.5em;
+	grid-row-gap: 1.5em;
+  }
+/* Groote van de foto in een grid view */
+ul[data-view='gridView'] img{
+	max-width: 100%;
+	height: auto;
+}
+
+
+/* code url: https://codepen.io/shooft/pen/bGxoWNO */
+ul.person li:not(.person) {
+	display:none;
+  }
+  
+  ul.place li:not(.place) {
+	display:none;
+  }
+  
+  ul.sights li:not(.sights) {
+	display:none;
+  }
+  
