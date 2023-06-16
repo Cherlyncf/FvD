@@ -41,42 +41,65 @@ button:not(:disabled), summary {
 	/* selecteren en sorteren background kleur */
 	--color-background-section1: #B7C8C2;
 	
-	/* button kleur styling  */
+	/* button kleur styling 
 	--color-button: #fff;
 	--color-border-button: #d5d9d9;
 	--color-button-hover: #6d7c77;
 	--color-button-hover-text: #fff;
-	--color-button-focus: #ECA4B1;
+	--color-button-focus: #ECA4B1; */
 
 	/* schaduw van de foto's  */
 	--color-box-shadow-img: rgba(0, 0, 0, 0.22);
 
-
+/*  Stap 4a. */
+--swiper-theme-color:#fff;
 
 
 }
 @media (prefers-color-scheme:dark) {
 	body {
+		--color-text-h1:#fff;
+		--color-text:#fff;
+		--color-background:#161426;
+
+		--color-background-header: #3A3873;
+
+		--color-background-section1: #034873;
+
+		--swiper-theme-color:#fff;
+
 	}
   }
 
 /*********************/
 /* algemene styling */
 /*******************/
+html {
+	height:100%;
+  
+}
 body {
-  font-family: eenfont, sans-serif;
+	/*min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;*/
+	
+  	font-family: eenfont, sans-serif;
 
-  color:var(--color-text);
-  background-color:var(--color-background);
+  	color:var(--color-text);
+  	background-color:var(--color-background);
+
+  	
 }
 header {
-	position: sticky;
 	top: 0;
 	z-index: 100;
 
 	padding: 1em 1em;
 
 	background-color: var(--color-background-header);
+
+	text-align:center;
 }
 
 h1 {
@@ -97,14 +120,66 @@ img:hover{
 	cursor: pointer;
 
 	background-color: rgba(150, 150, 150, 0.5);
-
 }
 /****************************/
 /* Section 1: carousel */
 /****************************/
-section:nth-of-type(1) ul{
-	
+
+section:nth-of-type(1) {
+	display: flex;
+	justify-content: center;
+
+	width:100%;
+	max-width:100%;
+	max-height:40em;
+	margin:0 auto;
+	overflow: scroll;
+
+	padding: 1em 1em;
 }
+p {
+	font-size: 1.5em;
+}
+label {
+	font-size: 1.2em;
+}
+input {
+	font:inherit;
+  }
+
+/* de lijst */
+  section:nth-of-type(1) ul {
+
+	height:100%;
+	margin: 2em 2em;
+	padding:0;
+	list-style:none;
+  }
+/* een foto */
+section:nth-of-type(1) li { 
+	height:100%;
+
+	/* !important is nodig omdat swiper.js display:block; aan de li toevoegt - en daardoor zou de lay-out van de kaart misgaan */
+	display:flex !important; 
+	flex-direction:column;
+	justify-content:center;
+	align-items:center;
+}
+section:nth-of-type(1) li img {
+	margin-bottom: 1em;
+
+	width:auto;
+	height:25em;
+	order:-1;
+
+	border-radius: 5%;
+}
+.swiper-button-prev,
+.swiper-button-next {
+	border:none;
+	background:none;
+}
+
 
 /****************************/
 /* Section 2: radio buttons */
@@ -112,15 +187,16 @@ section:nth-of-type(1) ul{
 section:nth-of-type(2){
 	display: flex;
 	justify-content: center;
-	position: sticky;
-	top: 4em;
+	top: 0em;
 	z-index: 100;
 
+	position: sticky;
 
 	padding-bottom: .5em;
 
 	background-color: var(--color-background-section1);
 }
+
 
 /**************************/
 /* Section 3: sorteer op  */
@@ -128,10 +204,11 @@ section:nth-of-type(2){
 section:nth-of-type(3){
 	display: flex;
 	justify-content: center;
-	position: sticky;
-		z-index: 100;
+	z-index: 100;
 
-	top: 6.7em;
+	position: sticky;
+
+	top: 2.6em;
 	padding-top: 0;
 	background-color: var(--color-background-section1);
 }
@@ -149,6 +226,24 @@ aside {
 		flex-direction: column;
 		width: 100%;
 	}
+	section:nth-of-type(4) ul {
+		padding: 2em;
+	}
+	
+}
+@media (min-width: 33em) {
+	
+	aside {
+		display: flex;
+		justify-content: center;
+		flex-direction: row;
+		width: 100%;
+	}
+	section:nth-of-type(4) ul {
+		padding: 1em;
+	}
+	
+	
 }
 
 /* button styling 
@@ -229,4 +324,16 @@ ul.person li:not(.person) {
   ul.sights li:not(.sights) {
 	display:none;
   }
+  
+
+  /* test*/
+/*https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css*/
+
+
+  
+  
+
+  
+ 
+  
   

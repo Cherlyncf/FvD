@@ -7,10 +7,9 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	
 	<title>Opdracht 2: Interactie galore - Frontend voor Designers</title>
-	
-	<link href="styles/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css">
+    <link href="styles/style.css" rel="stylesheet">
   <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
-
 </head>
 
 <body>
@@ -19,9 +18,34 @@
 	</header>
 
 	<main>
-        <section>
+        <section class="swiper">
+          
+            <p class="swiper-pagination"></p>
             
+            <!-- dit element met de class (swiper-button-prev) gebruikt de lib voor de vorige button -->
+            <button class="swiper-button-prev"></button>
+            <!-- dit element met de class (swiper-button-next) gebruikt de lib voor de volgende button -->
+            <button class="swiper-button-next"></button>
+            
+            <!-- deze class (swiper-wrapper) heeft de lib ook nodig - de binnenste container -->
+            <ul class="swiper-wrapper">
+            
+              <!-- deze class (swiper-slide) heeft de lib ook nodig - voor elke card/slide -->
+              <li class="swiper-slide"><img src="images/hoge-uitzicht.jpg" alt="hoge uitzicht"/></li>
+              <li class="swiper-slide"><img src="images/persoon1.jpg" alt="persoon"/></li>
+              <li class="swiper-slide"><img src="images/parijs.jpg" alt="eifeltoren"/></li>
+              <li class="swiper-slide"><img src="images/waterval.jpg" alt="waterval"/></li>
+              <li class="swiper-slide"><img src="images/vrienden.jpg" alt="vrienden"/></li>
+              <li class="swiper-slide"><img src="images/zee.jpg" alt="zee"/></li>
+              <li class="swiper-slide"><img src="images/vliegtuig.jpg" alt="vliegtuig uitzicht"/></li>
+              <li class="swiper-slide"><img src="images/moskee.jpg" alt="moskee"/></li>
+              <li class="swiper-slide"><img src="images/berg.jpg" alt="berg"/></li>              
+              <li class="swiper-slide"><img src="images/trap-water.jpg" alt="trap met water"/></li>
+              <li class="swiper-slide"><img src="images/zonsondergang.jpg" alt="zonsondergang"/></li>
+              <li class="swiper-slide"><img src="images/paragliden.jpg" alt="paragliden"/></li>
+            </ul>
         </section>
+
         
         <section>
             <form>
@@ -30,7 +54,6 @@
                 <label for="view-list">Lijst</label>
                 <input type="radio" name="view" value="list" id="view-grid">
                 <label for="view-grid">Grid</label>
-              
             </form>
         </section>
 
@@ -51,17 +74,18 @@
               </aside>
         </section>
 
-        <section>
+            <!-- ik heb een class voor de laatste section gebruikt, omdat anders de carousel, grid view en filters tegelijkertijd werken-->
+        <section class="alles">
             <!-- bij het openen wordt de lijst in een lijst getoond -->
             <ul data-view="listView">
                 <li class="place"><img src="images/hoge-uitzicht.jpg" alt="hoge uitzicht"></li>
                 <li class="person"><img src="images/persoon1.jpg" alt="persoon"></li>
-                <li class="sights"><img src="images/parijs.jpg" alt="de eifeltoren"></li>
+                <li class="place"><img src="images/parijs.jpg" alt="de eifeltoren"></li>
                 <li class="place"><img src="images/waterval.jpg" alt="waterval"></li>
                 <li class="person"><img src="images/vrienden.jpg" alt="vrienden"></li>
                 <li class="place"><img src="images/zee.jpg" alt="zee"></li>
                 <li class="place"><img src="images/vliegtuig.jpg" alt="vliegtuig"></li>
-                <li class="sights"><img src="images/moskee.jpg" alt="moskee"></li>
+                <li class="place"><img src="images/moskee.jpg" alt="moskee"></li>
                 <li class="place"><img src="images/berg.jpg" alt="berg"></li>
                 <li class="place"><img src="images/trap-water.jpg" alt="trap met water"></li>
                 <li class="place"><img src="images/zonsondergang.jpg" alt="zonsondergang"></li>
@@ -69,6 +93,7 @@
             </ul>
         </section>
 	</main>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 
 	<script defer src="scripts/script.js"></script>
 </body>

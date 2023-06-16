@@ -1,6 +1,34 @@
 // JavaScript Document
-console.log("howdy");
 
+/************/
+/* carousel */
+/************/
+/* code url:mhttps://codepen.io/shooft/pen/GRXMEoV */
+var carousel = {
+  direction: 'horizontal', //richting van de carousel - de default
+  loop: 'true', // van 25 naar 1 en vice versa
+  speed: 300, // duur van transitie in ms
+  cssMode: true, // smoother
+
+  // pagination
+  pagination: {
+    el: '.swiper-pagination', // class van de paginering
+    type: 'fraction' // x/xx als paginering
+  },
+
+  // navigation arrows
+  navigation: {
+    nextEl: '.swiper-button-next', // class van next button
+    prevEl: '.swiper-button-prev' // class van prev button
+  }
+};
+
+/* het daadwerkelijk initialiseren van de carousel */
+const swiper = new Swiper('.swiper', carousel);
+
+/*************/
+/* grid view */
+/*************/
 /* code url: https://codepen.io/shooft/pen/BaOwRBq */
 
 var optionList = document.querySelector("#view-list");
@@ -11,7 +39,7 @@ optionGrid.addEventListener("change", showInGrid);
 
 function showInList() {
   /* de lijst in de HTML opzoeken */
-  let deLijst = document.querySelector("ul");
+  let deLijst = document.querySelector(".alles ul");
   /* de class grid-view verwijderen */
   deLijst.dataset.view = "listView";
   /* dan de class list-view toevoegen */
@@ -20,15 +48,18 @@ function showInList() {
 
 function showInGrid() {
   /* de lijst in de HTML opzoeken */
-  let deLijst = document.querySelector("ul");
+  let deLijst = document.querySelector(".alles ul");
   /* de class list-view verwijderen */
   deLijst.dataset.view = "gridView";
   /* dan de class grid-view toevoegen */
   // deLijst.classList.add("gridView");
 }
 
-
+/*****************/
+/* filter opties */
+/*****************/
 /* code url: https://codepen.io/shooft/pen/bGxoWNO */
+
 var optionAll = document.querySelector("#filter-all");
 var optionPerson = document.querySelector("#filter-person");
 var optionPlace = document.querySelector("#filter-place");
@@ -41,7 +72,7 @@ optionSights.addEventListener("change", filterList);
 
 function filterList(event){
   /* de ul opzoeken */
-  let deLijst = document.querySelector("ul");
+  let deLijst = document.querySelector(".alles ul");
   let nieuweFilter = event.target.value;
   // verwijder de huidige class van de lijst
   deLijst.className = "listView";
