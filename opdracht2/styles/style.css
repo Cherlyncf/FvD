@@ -9,7 +9,6 @@
 			 url('../fonts/eenfont.woff') format('woff');
 	font-weight: normal;
 	font-style: normal;
-
 }
 
 /**************/
@@ -34,77 +33,126 @@ button:not(:disabled), summary {
 	--color-text-h1:#fff;
 	--color-text:#000;
 	--color-background:#f2e8d9;
+	--color-img-hover: rgba(150, 150, 150, 0.5);
+
+	/* splash screen styling */
+	--color-span: #fff;
+	--color-background-splashscreen: #ECA4B1;
+	--color-border-laadbalk: #fff; 
+	--color-laden-laadbalk: #D95F76;
+	--color-button-splash: #D95F76;
+	--color-button-border-splash: #D95F76;
+	--color-button-splash-hover: #D95F76;
+	
+	/* header button styling */
+	--color-button-header: #D95F76;
+	--color-button-border-header: #D95F76;
 
 	/* header kleur */
 	--color-background-header: #ECA4B1;
 
+	/* social media img deel link styling */
+	--color-social-media-link: #D95F76;
+
 	/* selecteren en sorteren background kleur */
 	--color-background-section1: #B7C8C2;
-	
-	/* button kleur styling 
-	--color-button: #fff;
-	--color-border-button: #d5d9d9;
-	--color-button-hover: #6d7c77;
-	--color-button-hover-text: #fff;
-	--color-button-focus: #ECA4B1; */
 
 	/* schaduw van de foto's  */
 	--color-box-shadow-img: rgba(0, 0, 0, 0.22);
 
-/*  Stap 4a. */
---swiper-theme-color:#fff;
+	--swiper-theme-color:#fff;
 
+	/* styling swiper button */
+	--color-swiper-button-hover: #D95F76;
 
+	/* states styling van de radio buttons */
+	--color-background-popup: #000c;
+	--color-swiper-button-hover: #D95F76;
+	--color-swiper-button-active: #ECA4B1;
+
+	--color-label-text: #fff;
+	--color-background-label: #ECA4B1;
+	--color-label-border: #ECA4B1;
+	--color-background-label-hover: #D95F76;
+	--color-label-border-hover:#D95F76;
+
+	--color-input-checked: #51718C;
+
+	--color-focus: #fff;
+
+	--color-background-active: #fff;
+	--color-active: #ECA4B1;
 }
 @media (prefers-color-scheme:dark) {
 	body {
-		--color-text-h1:#fff;
 		--color-text:#fff;
 		--color-background:#161426;
 
+		--color-background-splashscreen: #034873;
+		--color-border-laadbalk: #fff; 
+		--color-laden-laadbalk: #3A3873;
+
+		--color-background-splashscreen: #034873;
+		--color-border-laadbalk: #fff; 
+		--color-laden-laadbalk: #3A3873;
+		--color-button-splash: #7988D9;
+		--color-button-border-splash: #7988D9;
+		--color-button-splash-hover: #7988D9;
+
+		--color-button-header: #7988D9;
+		--color-button-border-header: #7988D9;
+
 		--color-background-header: #3A3873;
+
+		--color-social-media-link: #7988D9;
 
 		--color-background-section1: #034873;
 
-		--swiper-theme-color:#fff;
+		--color-swiper-button-hover: #034873;
+		--color-swiper-button-active: #7988D9;
 
+		--color-background-label: #7988D9;
+		--color-label-border: #7988D9;
+		--color-background-label-hover: #161426;
+		--color-label-border-hover: #161426;
+
+		--color-input-checked: #3A3873;
+
+		--color-active: #3A3873;
 	}
-  }
+}
+
 
 /*********************/
 /* algemene styling */
 /*******************/
 html {
 	height:100%;
-  
 }
+
+html.no-scroll {
+	overflow: hidden;
+}
+
 body {
-	/*min-height: 100vh;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;*/
-	
   	font-family: eenfont, sans-serif;
 
   	color:var(--color-text);
   	background-color:var(--color-background);
-
-  	
 }
 header {
-	top: 0;
+	position: sticky;
+	top: -4em;
 	z-index: 100;
 
-	padding: 1em 1em;
+	padding: 1em 1.5em;
 
 	background-color: var(--color-background-header);
-
 	text-align:center;
 }
-
 h1 {
+	padding-bottom: .8em;
 	text-align: center;
-
 	color:var(--color-text-h1);
 }
 section {
@@ -116,46 +164,253 @@ label {
 img {
 	opacity: 1;
 }
-img:hover{
-	cursor: pointer;
 
-	background-color: rgba(150, 150, 150, 0.5);
+
+/*************************/
+/* splash screen styling */
+/*************************/
+/* code url: https://dev.to/saikatbishal/how-to-make-a-splash-screen-using-html-css-and-javascript-240m */
+.splash{
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+
+	z-index: 100;
+	position : fixed;
+	top : 50%;
+	left : 50%;
+	height : 100%;
+	width : 100%;
+	
+	/*transition all gebruikt, zodat alle elementen dezelfde transition krijgen*/
+	transform : translate(-50%,-50%); /* om de container roch zichzelf te centreren*/   
+	transition : all ease-out 600ms; /* 0.6 sec voor een smooth overgang als het verdwijnt na het klikken*/ 
+	
+	background-color: var(--color-background-splashscreen);
+	cursor: wait;
+
+
+	display:none; /* niet vergeten weer aan te zetten */
 }
-/****************************/
-/* Section 1: carousel */
-/****************************/
+.splash span {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 
+	padding-bottom: .5em;
+
+	color: var(--color-span);
+	font-size: 2.5em;
+}
+/* deze class verbergt de container nadat de dekking met JS op 0 gezet is*/
+.hidden{
+	transition : ease-out 5s;
+	display : none;
+}
+/* pulse animatie voor de tekst: vakantie foto's 2022*/
+span {
+	transform: scale(1);
+	animation: pulse 2s infinite;
+}
+@keyframes pulse {
+	0% {
+		transform: scale(0.95);
+	}
+	50% {
+		transform: scale(1.1);
+	}
+	100% {
+		transform: scale(0.95);
+	}
+}
+/*laad balk styling*/
+.progress {
+    position: relative;
+	padding-bottom: 1.2em;
+    margin-bottom: 1em;
+
+    height: 0.63em;
+    width: 30em;
+
+    border: 0.63em solid var(--color-border-laadbalk);
+    border-radius: 0.94em;
+}
+.progress span {
+    position: absolute;
+    height: .3em;
+
+    border-radius: 0.2em;
+	background-color: var(--color-laden-laadbalk);
+
+    animation: laden 5s linear;    
+	animation-fill-mode: forwards;
+	animation-iteration-count: 1;
+}
+@keyframes laden{
+    0%{
+      width: 0%;
+    }
+    25%{
+        width: 20%;
+    }
+    50%{
+        width: 40%;
+    }
+    75%{
+        width: 60%;
+    }
+    100%{
+        width: 100%;
+    }
+}
+.splash button {
+	padding: 1em 2em;
+	border: 0.13px solid var(--color-button-border-splash) ;
+	border-radius: .3em;
+
+	font-size: 1em;
+	font-weight: bold;
+
+	color: var(--color-text-h1);
+	background-color: var(--color-button-splash);
+
+	opacity: 0;
+	animation: knop .5s linear; 
+	animation-delay: 6s;   
+	animation-fill-mode: forwards;
+	animation-iteration-count: 1;
+}
+/* animatie, zodat de knop verschijnt nadat de laadbalk geladen is */
+@keyframes knop{
+    0%{
+      opacity: 0;
+    }
+    100%{
+		opacity: 100%;
+    }
+}
+.splash button:hover{
+	transform: scale(1.1);
+	color: var(--color-button-splash-hover);
+	background-color: var(--color-span);
+	border-color: var(--color-focus);
+}
+.splash button:focus{
+	border: .3em solid var(--color-focus);
+}
+
+  
+/***********************/
+/* Section 1: carousel */
+/***********************/
 section:nth-of-type(1) {
 	display: flex;
 	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+
 
 	width:100%;
-	max-width:100%;
-	max-height:40em;
 	margin:0 auto;
 	overflow: scroll;
 
-	padding: 1em 1em;
+	padding: 3em 2em;
+
+	position: fixed;
+	top:0;
+	left:0;
+	z-index: 500;
+	scale:0;
+	transition: .5s;
+	
+	/* achtergrond van de slideshow popup */
+	background-color: var(--color-background-popup);
+	height:100%;
+}
+section:nth-of-type(1).show {
+	scale:1;
 }
 p {
 	font-size: 1.5em;
 }
-label {
-	font-size: 1.2em;
+/* carousel open knop styling */
+header button {
+	padding: .3em 1em;
+	font-size: 1.1em;
+
+	border: 0.13px solid var(--color-focus);
+    border-radius: .3em;
+
+	color: var(--color-active);
+	background-color: var(--color-focus);
 }
-input {
-	font:inherit;
-  }
+header button:hover {
+	border: var(--color-button-border-header);
+	background-color: var(--color-button-splash);
+	color: var(--color-label-text);
 
-/* de lijst */
+	transform: scale(1.1);
+}
+/* carousel sluit knop styling */
+.swiper > button:nth-of-type(1){
+	display: flex;
+	align-self: flex-end;
+	width: 3em;
+
+	margin-top: 3em;
+
+	border: none;
+	background-color: transparent;
+}
+.swiper button:nth-of-type(1):hover {
+	transform: scale(1.1);
+}
+
+/* sociale media iconen styling */
+section:nth-of-type(1) p:nth-of-type(1) {
+	color: var(--color-text-h1);
+	margin-bottom: -.3em;
+}
+section:nth-of-type(1) ul:nth-of-type(1) {
+	display: flex;
+	flex-direction: row;
+}
+section:nth-of-type(1) ul:nth-of-type(1) li{
+	margin-right: 1em;
+}
+section:nth-of-type(1) ul:nth-of-type(1) img{
+	width: 3.5em;
+	margin-bottom: -.5em;
+}
+
+section:nth-of-type(1) ul:nth-of-type(1) img:hover {
+	background-color: var(--color-social-media-link);
+	border-radius: 100%;
+	border:.1em hidden transparent;
+	transform: scale(1.1);
+}
+/* nummering van de foto's in de carousel */
+.swiper-pagination  {
+	position: absolute;
+	padding-top: 1em;
+	padding-bottom: .5em;
+
+	text-align: center;
+	transition: .3s opacity;
+	transform: translate3d(0,0,0);
+	z-index: 10;
+
+	color: var(--color-text-h1);
+}
+/* de lijst van de carousel */
   section:nth-of-type(1) ul {
-
-	height:100%;
-	margin: 2em 2em;
+	margin: 1em 2em;
 	padding:0;
 	list-style:none;
+	transform: scale(1.1);
   }
-/* een foto */
+/* foto's in de carousel */
 section:nth-of-type(1) li { 
 	height:100%;
 
@@ -165,38 +420,110 @@ section:nth-of-type(1) li {
 	justify-content:center;
 	align-items:center;
 }
-section:nth-of-type(1) li img {
-	margin-bottom: 1em;
-
-	width:auto;
+.swiper-wrapper .swiper-slide  img {
 	height:25em;
+	width: auto;
 	order:-1;
+	overflow: scroll;
 
 	border-radius: 5%;
 }
+/* terug en volgende knop styling */
 .swiper-button-prev,
 .swiper-button-next {
-	border:none;
-	background:none;
+	padding: 3em 4em 3em 2.3em;
+	margin: 5em 2em;
+
+    border: none;
+    border-radius: 30%;
+
+	font-weight: bold;
+    background: var(--color-background-label);
+}
+.swiper-button-prev:hover,
+.swiper-button-next:hover{
+	transform: scale(1.1);
+	background: var(--color-swiper-button-hover);
+}
+.swiper-button-prev:focus,
+.swiper-button-next:focus {
+	border: .3em solid var(--color-focus);
+}
+.swiper-button-prev:active,
+.swiper-button-next:active {
+	color: var(--color-swiper-button-active);
+	background: var(--color-focus);
 }
 
 
 /****************************/
-/* Section 2: radio buttons */
+/* Section 2: Toon in een */
 /****************************/
 section:nth-of-type(2){
 	display: flex;
 	justify-content: center;
-	top: 0em;
-	z-index: 100;
+	top: 4em;
+	z-index: 90;
 
 	position: sticky;
-
-	padding-bottom: .5em;
+	padding-bottom: 1em;
 
 	background-color: var(--color-background-section1);
 }
+/* radio button styling*/
+/* De default radio button styling verstoppen, zodat het nog genavigeerd kan worden met toetsenbord*/
+input[type="radio"]{
+	position: absolute;
+  	opacity: 0;
+  	cursor: pointer;
+}
+label {
+	display: inline-block;
+    padding: .3em 1em;
+	margin-left: .5em;
 
+    border: 0.13px solid var(--color-label-border);
+    border-radius: .3em;
+
+	background-color: var(--color-background-label);
+	color: var(--color-label-text);
+	font-size: 1.2em;
+
+	cursor: pointer;
+}
+label:hover{
+	background-color: var(--color-background-label-hover);
+	border-color: var(--color-label-border-hover);
+}
+input[type="radio"]:hover + label{
+	transform: scale(1.1);
+}
+/* styling van geselecteerde radio button*/
+input[type="radio"]:checked + label {
+	background-color:var(--color-input-checked);
+    border-color: var(--color-input-checked);
+}
+/* styling van focus radio button*/
+input[type="radio"]:focus + label {
+	border: .15em solid var(--color-focus);
+}
+input[type="radio"]:active + label{
+	color: var(--color-active);
+	background-color: var(--color-background-active);
+	border: var(--color-focus);
+}
+/* Zodat de eerste labels in de 2 sections geen styling hebben */
+label:nth-of-type(1){
+    all: unset;
+}
+
+/* Upload een foto button styling */
+/* zorgt ervoor dat de foto bovenaan komt te staan na het uploaden*/
+.swiper-wrapper li button{
+	position: relative;
+	z-index: 11;
+	top:-1em;
+}
 
 /**************************/
 /* Section 3: sorteer op  */
@@ -204,12 +531,11 @@ section:nth-of-type(2){
 section:nth-of-type(3){
 	display: flex;
 	justify-content: center;
-	z-index: 100;
 
 	position: sticky;
+	z-index: 80;
 
-	top: 2.6em;
-	padding-top: 0;
+	top: 8.2em;
 	background-color: var(--color-background-section1);
 }
 aside {
@@ -217,52 +543,27 @@ aside {
 	flex-direction: row;
 	align-items: center;
 }
-
-/* styling zodat op een kleine scherm de buttons onder elkaar staan */
-@media (max-width: 32em) {
-	
-	aside {
-		display: flex;
-		flex-direction: column;
-		width: 100%;
-	}
-	section:nth-of-type(4) ul {
-		padding: 2em;
-	}
-	
+/* upload sectie styling */
+aside div {
+	padding-left: .5em;
 }
-@media (min-width: 33em) {
-	
-	aside {
-		display: flex;
-		justify-content: center;
-		flex-direction: row;
-		width: 100%;
-	}
-	section:nth-of-type(4) ul {
-		padding: 1em;
-	}
-	
-	
+aside div p{
+	font-size: 1em;
+	padding-bottom: .2em;
 }
-
-/* button styling 
-section:nth-of-type(2) button{
-	padding: .5em 1em;
-	margin: .5em .5em;
-
-	border: .1em solid var(--color-border-button);
+aside div {
+	padding-left: .5em;
+}
+input[type="file"] {
+	width: 9em;
+	border: .5em solid var(--color-focus);
 	border-radius: .5em;
-	cursor: pointer;
-	background-color: var(--color-button);
 }
-section:nth-of-type(2) button:hover {
-	color: var(--color-button-hover-text);
-  	background-color: var(--color-button-hover);
+input[type="file"]:hover {
+	border: .5em solid var(--color-background-label);
+	border-radius: .5em;
 }
-section:nth-of-type(2) button:focus {
-	border: .2em solid var(--color-button-focus) ;
-}*/
+
 
 /************************/
 /* Section 4: de foto's */
@@ -279,26 +580,25 @@ section:nth-of-type(4) li {
 
 	list-style: none;
 	cursor:grab;
-}
 
-/* foto's hover styling */
-section:nth-of-type(4)li img {
-	opacity: .5;
-	transition: .3s ease-in-out;
+	width:100%;
+}
+/* foto's styling in list view*/
+section:nth-of-type(4) li img {
+	width: auto;
 }
 section:nth-of-type(4) li img:hover {
 	opacity: .5;
+	transition: .3s ease-in-out;
+	transform: scale(.99);
 }
-
 /* Groote van de foto in een list view */
 section:nth-of-type(4) img {
 	max-width: 100%;
 
 	border-radius: 5%;
-
-	box-shadow: var(--color-box-shadow-img) 0px 3px 7px;
+	box-shadow: var(--color-box-shadow-img) 0px 0.2em 0.44em;
 }
-
 /* code url: https://codepen.io/shooft/pen/BaOwRBq */
 ul[data-view='gridView'] {
 	grid-template-columns:1fr 1fr 1fr;
@@ -310,30 +610,101 @@ ul[data-view='gridView'] img{
 	max-width: 100%;
 	height: auto;
 }
-
-
 /* code url: https://codepen.io/shooft/pen/bGxoWNO */
 ul.person li:not(.person) {
 	display:none;
-  }
-  
-  ul.place li:not(.place) {
+} 
+ul.place li:not(.place) {
 	display:none;
-  }
-  
-  ul.sights li:not(.sights) {
+}
+ul.sights li:not(.sights) {
 	display:none;
-  }
-  
+}
+section:nth-of-type(4) li.sights {
+	display: flex !important;
+	flex-direction: column;
+	justify-content: center;
+}
 
-  /* test*/
-/*https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css*/
+/* bestand kiezen knop staat in het midden in een lijst view*/
+section:nth-of-type(4) .sights {
+    align-items: center;
+}
+.sights p{
+	text-align: center;
+	padding-bottom: .5em;
+}
+
+section:nth-of-type(4) [data-view='listView']{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+/* .alles ul[data-view='gridView'] .sights{
+	align-items: center;
+	width: 10em;
+} */
+.alles img:hover{
+	cursor: pointer;
+	background-color: var(--color-img-hover);
+}
 
 
-  
-  
-
-  
- 
-  
-  
+/**************/
+/* media query*/
+/**************/
+/* ik heb het helemaal onderin geplaatst, want anders werkt het niet*/
+/* styling kleine scherm */
+@media (max-width: 32em) {
+	.splash span {
+		font-size: 1.8em;
+	}
+	.progress{
+		width: 16em;
+	}
+	section:nth-of-type(1) li img {
+		height: auto;
+	}
+	.swiper-button-prev, .swiper-button-next{
+		padding: 3em 4em 3em 2em;
+		margin: 6em 0em;
+		font-size: .7em;
+	}
+	aside {
+		display: flex;
+    	flex-direction: row;
+    	width: 100%;
+    	flex-wrap: wrap;
+    	justify-content: center;
+	}
+	aside div p{
+		padding-top: .6em;
+	}
+	label{
+		font-size: 1em;
+		margin: .5em 0 .5em .5em;
+	}
+	section:nth-of-type(3){
+		top: 8.8em;
+	}
+	section:nth-of-type(4) ul {
+		padding: 2em;
+	}
+	section:nth-of-type(4) .sights {
+		display: flex;
+		align-items: center;	
+	}
+}
+/* styling grote scherm */
+@media (min-width: 33em) {
+	aside {
+		display: flex;
+		justify-content: center;
+		flex-direction: row;
+		width: 100%;
+	}
+	section:nth-of-type(4) ul {
+		padding: 1em;
+	}
+}

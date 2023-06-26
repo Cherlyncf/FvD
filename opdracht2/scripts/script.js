@@ -1,14 +1,59 @@
 // JavaScript Document
 
+/*****************/
+/* splash screen */
+/*****************/
+/* code url: https://dev.to/saikatbishal/how-to-make-a-splash-screen-using-html-css-and-javascript-240m */
+
+/* class naam in de HTML opzoeken */
+var splashScreen = document.querySelector('.splash');
+/* een add event listener toevoegen, zodat het luistert naar een klik op de .splash container */
+splashScreen.addEventListener('click',()=>{
+  splashScreen.style.opacity = 0; //styling toevoegen aan de .splash container en de dekking op 0 zet
+  setTimeout(()=>{ // eerste parameter voert de actie uit (een class toevoegen aan de div) 
+    splashScreen.classList.add('hidden') //de verborgen class wordt toegevoegd aan de .splash container
+  }, 1000) // de tweede parameter voert de actie tijd uit in millieseconden, na 1 sec
+})
+
+/*****************/
+/* toon carousel */
+/*****************/
+const sliderButton = document.querySelector("header button");
+const slider = document.querySelector(".swiper");
+
+
+sliderButton.addEventListener("click", toggleSlider);
+
+function toggleSlider() {
+  slider.classList.add("show");
+  document.documentElement.classList.add("no-scroll");
+}
+
+/********************/
+/* carousel sluiten */
+/********************/
+// de sluit-button wordt opgezocht in de html
+var sluitButton = document.querySelector("button img");
+
+// button luisterd naar kliks
+sluitButton.addEventListener("click", sluitMenu);
+
+// in de functie wordt de class van de section verwijderd
+function sluitMenu() {
+  var deSlider = document.querySelector(".swiper");
+  deSlider.classList.remove("show");
+  document.documentElement.classList.remove("no-scroll");
+}
+
 /************/
 /* carousel */
 /************/
-/* code url:mhttps://codepen.io/shooft/pen/GRXMEoV */
+/* code url:https://codepen.io/shooft/pen/GRXMEoV */
 var carousel = {
   direction: 'horizontal', //richting van de carousel - de default
   loop: 'true', // van 25 naar 1 en vice versa
-  speed: 300, // duur van transitie in ms
-  cssMode: true, // smoother
+  speed: 300, // duur van transitie in ms, 0,3 sec
+  cssMode: true, // om het smoother te maken
 
   // pagination
   pagination: {
@@ -18,8 +63,8 @@ var carousel = {
 
   // navigation arrows
   navigation: {
-    nextEl: '.swiper-button-next', // class van next button
-    prevEl: '.swiper-button-prev' // class van prev button
+    nextEl: '.swiper-button-next', // class van volgende button
+    prevEl: '.swiper-button-prev' // class van terug button
   }
 };
 
@@ -31,28 +76,28 @@ const swiper = new Swiper('.swiper', carousel);
 /*************/
 /* code url: https://codepen.io/shooft/pen/BaOwRBq */
 
+/* id naam in de HTML opzoeken */
 var optionList = document.querySelector("#view-list");
 var optionGrid = document.querySelector("#view-grid");
 
+/* een add event listener toevoegen, zodat het luistert naar een klik op de lijst en grid container radio button */
 optionList.addEventListener("change", showInList);
 optionGrid.addEventListener("change", showInGrid);
 
 function showInList() {
   /* de lijst in de HTML opzoeken */
   let deLijst = document.querySelector(".alles ul");
-  /* de class grid-view verwijderen */
+  /* de class list-view laten zien als het geselecteerd is */
   deLijst.dataset.view = "listView";
   /* dan de class list-view toevoegen */
-  // deLijst.classList.add("listView");
 }
 
 function showInGrid() {
   /* de lijst in de HTML opzoeken */
   let deLijst = document.querySelector(".alles ul");
-  /* de class list-view verwijderen */
+  /* de class list-grid laten zien als het geselecteerd is */
   deLijst.dataset.view = "gridView";
   /* dan de class grid-view toevoegen */
-  // deLijst.classList.add("gridView");
 }
 
 /*****************/
@@ -60,11 +105,13 @@ function showInGrid() {
 /*****************/
 /* code url: https://codepen.io/shooft/pen/bGxoWNO */
 
+/* id namen in de HTML opzoeken */
 var optionAll = document.querySelector("#filter-all");
 var optionPerson = document.querySelector("#filter-person");
 var optionPlace = document.querySelector("#filter-place");
 var optionSights = document.querySelector("#filter-sights");
 
+/* een add event listener toevoegen, zodat het luistert naar een klik op de radio button */
 optionAll.addEventListener("change", filterList);
 optionPerson.addEventListener("change", filterList);
 optionPlace.addEventListener("change", filterList);
@@ -82,4 +129,45 @@ function filterList(event){
   // in dit geval de radio button die gewijzigd is
   // de value van die radio button is de nieuwe class
   deLijst.classList.add(nieuweFilter);
+}
+
+/*********************/
+/* een foto uploaden */
+/*********************/
+// link code url: https://www.youtube.com/watch?v=lzK8vM_wdoY
+const image_input = document.querySelector ("#image_input");
+var uploaded_image = "";
+
+
+image_input.addEventListener("change", function(){
+  const reader = new FileReader ();
+  reader.addEventListener("load", () => {
+    uploaded_image = reader.result;
+    const deLijst = document.querySelector(".delijst ul");
+
+    var liHTML = 
+   `<li class="sights"><img src="${uploaded_image}" alt="hoge uitzicht"></li>`;
+
+   deLijst.insertAdjacentHTML("afterbegin", liHTML);
+
+  });
+  reader.readAsDataURL(this.files[0]);
+})
+
+/*********************/
+/* foto verwijderen */
+/********************/
+//https://swiperjs.com/get-started */
+var verwijderButtons = document.querySelectorAll(".swiper-wrapper li button");
+
+verwijderButtons.forEach(verwijderButton => {
+  verwijderButton.addEventListener("click", verwijderFoto);
+});
+
+function verwijderFoto(event) {
+  var currentButton = event.currentTarget;
+  var currentLi = currentButton.closest("li");
+  currentLi.remove();
+
+  swiper.update();
 }
