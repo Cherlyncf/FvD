@@ -32,9 +32,40 @@
 	<main>
         <section class="swiper">
             <p class="swiper-pagination"></p>
+
             <!-- aria hidden kan worden gebruikt om niet interactieve inhoud, zoals afbeeldingen en uitgevouwen menu's te verbergen voor screenreader gebruikers  -->
-           
             <button aria-hidden="true"><img src="images/sluiten.png" alt="sluiten"></button> 
+
+            <!-- dit element met de class (swiper-button-prev) gebruikt de lib voor de vorige button -->
+            <button class="swiper-button-prev"></button>
+            <!-- dit element met de class (swiper-button-next) gebruikt de lib voor de volgende button -->
+            <button class="swiper-button-next"></button>
+			
+            <!-- deze class (swiper-wrapper) heeft de lib ook nodig - de binnenste container -->
+            <ul class="swiper-wrapper">
+                <!-- deze class (swiper-slide) heeft de lib ook nodig - voor elke card/slide -->
+                <li class="swiper-slide"><button>Verwijderen</button><img src="images/hoge-uitzicht.jpg" alt="hoge uitzicht"/></li>
+                <li class="swiper-slide"><button>Verwijderen</button><img src="images/persoon1.jpg" alt="persoon"/></li>
+                <li class="swiper-slide"><button>Verwijderen</button><img src="images/parijs.jpg" alt="eifeltoren"/></li>
+                <li class="swiper-slide"><button>Verwijderen</button><img src="images/waterval.jpg" alt="waterval"/></li>
+                <li class="swiper-slide"><button>Verwijderen</button><img src="images/vrienden.jpg" alt="vrienden"/></li>
+                <li class="swiper-slide"><button>Verwijderen</button><img src="images/zee.jpg" alt="zee"/></li>
+                <li class="swiper-slide"><button>Verwijderen</button><img src="images/vliegtuig.jpg" alt="vliegtuig uitzicht"/></li>
+                <li class="swiper-slide"><button>Verwijderen</button><img src="images/moskee.jpg" alt="moskee"/></li>
+                <li class="swiper-slide"><button>Verwijderen</button><img src="images/berg.jpg" alt="berg"/></li>              
+                <li class="swiper-slide"><button>Verwijderen</button><img src="images/trap-water.jpg" alt="trap met water"/></li>
+                <li class="swiper-slide"><button>Verwijderen</button><img src="images/zonsondergang.jpg" alt="zonsondergang"/></li>
+                <li class="swiper-slide"><button>Verwijderen</button><img src="images/paragliden.jpg" alt="paragliden"/></li>
+                <li class="swiper-slide"><button>Verwijderen</button><img src="images/plafond.jpg" alt="plafond in de Louvre"/></li>
+                <li class="swiper-slide"><button>Verwijderen</button><img src="images/mona-lisa.jpg" alt="De Mona Lisa"/></li>
+                <li class="swiper-slide"><button>Verwijderen</button><img src="images/vrienden-parijs.jpg" alt="vrienden in Parijs"/></li>
+                <li class="swiper-slide"><button>Verwijderen</button><img src="images/drankje.jpg" alt="drankje in de avond in Parijs"/></li>
+                <li class="swiper-slide"><button>Verwijderen</button><img src="images/photobooth.jpg" alt="photobooth foto"/></li>
+                <li class="swiper-slide"><button>Verwijderen</button><img src="images/gifje.jpg" alt="gifje foto"/></li>
+                <li class="swiper-slide"><button>Verwijderen</button><img src="images/dansen.jpg" alt="dansen in Turkije"/></li>
+                <li class="swiper-slide"><button>Verwijderen</button><img src="images/turkije.jpg" alt="mensen in Turkije"/></li>
+                <li class="swiper-slide"><button>Verwijderen</button><img src="images/cher-en-lies.jpg" alt="2 vrienden"/></li>
+            </ul>
 
             <p>Delen op:</p>
             <ul>
@@ -46,36 +77,7 @@
                 <li><a href="https://www.facebook.com/"><img src="images/fb.png" alt="delen via Facebook"></a></li>
             </ul>
 
-            <!-- dit element met de class (swiper-button-prev) gebruikt de lib voor de vorige button -->
-            <button class="swiper-button-prev"></button>
-            <!-- dit element met de class (swiper-button-next) gebruikt de lib voor de volgende button -->
-            <button class="swiper-button-next"></button>
-			
-            <!-- deze class (swiper-wrapper) heeft de lib ook nodig - de binnenste container -->
-            <ul class="swiper-wrapper">
-                <!-- deze class (swiper-slide) heeft de lib ook nodig - voor elke card/slide -->
-                <li class="swiper-slide"><button>verwijderen</button><img src="images/hoge-uitzicht.jpg" alt="hoge uitzicht"/></li>
-                <li class="swiper-slide"><button>verwijderen</button><img src="images/persoon1.jpg" alt="persoon"/></li>
-                <li class="swiper-slide"><button>verwijderen</button><img src="images/parijs.jpg" alt="eifeltoren"/></li>
-                <li class="swiper-slide"><img src="images/waterval.jpg" alt="waterval"/></li>
-                <li class="swiper-slide"><img src="images/vrienden.jpg" alt="vrienden"/></li>
-                <li class="swiper-slide"><img src="images/zee.jpg" alt="zee"/></li>
-                <li class="swiper-slide"><img src="images/vliegtuig.jpg" alt="vliegtuig uitzicht"/></li>
-                <li class="swiper-slide"><img src="images/moskee.jpg" alt="moskee"/></li>
-                <li class="swiper-slide"><img src="images/berg.jpg" alt="berg"/></li>              
-                <li class="swiper-slide"><img src="images/trap-water.jpg" alt="trap met water"/></li>
-                <li class="swiper-slide"><img src="images/zonsondergang.jpg" alt="zonsondergang"/></li>
-                <li class="swiper-slide"><img src="images/paragliden.jpg" alt="paragliden"/></li>
-                <li class="swiper-slide"><img src="images/plafond.jpg" alt="plafond in de Louvre"/></li>
-                <li class="swiper-slide"><img src="images/mona-lisa.jpg" alt="De Mona Lisa"/></li>
-                <li class="swiper-slide"><img src="images/vrienden-parijs.jpg" alt="vrienden in Parijs"/></li>
-                <li class="swiper-slide"><img src="images/drankje.jpg" alt="drankje in de avond in Parijs"/></li>
-                <li class="swiper-slide"><img src="images/photobooth.jpg" alt="photobooth foto"/></li>
-                <li class="swiper-slide"><img src="images/gifje.jpg" alt="gifje foto"/></li>
-                <li class="swiper-slide"><img src="images/dansen.jpg" alt="dansen in Turkije"/></li>
-                <li class="swiper-slide"><img src="images/turkije.jpg" alt="mensen in Turkije"/></li>
-                <li class="swiper-slide"><img src="images/cher-en-lies.jpg" alt="2 vrienden"/></li>
-            </ul>
+            
         </section>
         
         <section>

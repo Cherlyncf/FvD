@@ -15,6 +15,31 @@ splashScreen.addEventListener('click',()=>{
   }, 1000) // de tweede parameter voert de actie tijd uit in millieseconden, na 1 sec
 })
 
+/****************/
+/* de carousel */
+/**************/
+/* code url:https://codepen.io/shooft/pen/GRXMEoV */
+var carousel = {
+  direction: 'horizontal', //richting van de carousel - de default
+  loop: 'true', // van 25 naar 1 en vice versa
+  speed: 300, // duur van transitie in ms, 0,3 sec
+  cssMode: true, // om het smoother te maken
+
+  // pagination
+  pagination: {
+    el: '.swiper-pagination', // class van de paginering
+    type: 'fraction' // x/xx als paginering
+  },
+
+  // navigation arrows
+  navigation: {
+    nextEl: '.swiper-button-next', // class van volgende button
+    prevEl: '.swiper-button-prev' // class van terug button
+  }
+};
+
+/* het daadwerkelijk initialiseren van de carousel */
+const swiper = new Swiper('.swiper', carousel);
 /*****************/
 /* toon carousel */
 /*****************/
@@ -45,31 +70,7 @@ function sluitMenu() {
   document.documentElement.classList.remove("no-scroll");
 }
 
-/************/
-/* carousel */
-/************/
-/* code url:https://codepen.io/shooft/pen/GRXMEoV */
-var carousel = {
-  direction: 'horizontal', //richting van de carousel - de default
-  loop: 'true', // van 25 naar 1 en vice versa
-  speed: 300, // duur van transitie in ms, 0,3 sec
-  cssMode: true, // om het smoother te maken
 
-  // pagination
-  pagination: {
-    el: '.swiper-pagination', // class van de paginering
-    type: 'fraction' // x/xx als paginering
-  },
-
-  // navigation arrows
-  navigation: {
-    nextEl: '.swiper-button-next', // class van volgende button
-    prevEl: '.swiper-button-prev' // class van terug button
-  }
-};
-
-/* het daadwerkelijk initialiseren van de carousel */
-const swiper = new Swiper('.swiper', carousel);
 
 /*************/
 /* grid view */
@@ -134,15 +135,22 @@ function filterList(event){
 /*********************/
 /* een foto uploaden */
 /*********************/
-// link code url: https://www.youtube.com/watch?v=lzK8vM_wdoY
+// link code url: https://www.youtube.com/watch?v=lzK8vM_wdoY en hulp van Sanne
+
+/* id naam van de input in de HTML opzoeken */
 const image_input = document.querySelector ("#image_input");
+/* var aanmaken waar de foto kan worden opgeslagen */
 var uploaded_image = "";
 
-
+/* een add event listener toevoegen, zodat als je op de input klikt je bestanden kan openen */
 image_input.addEventListener("change", function(){
+  // om het bestand te lezen dat geselecteerd is moet je de filereader object gebruiken
   const reader = new FileReader ();
+  // als de foto geüpload is wordt het opgeslagen in de variable uploaded_image en daarna wordt de filereader gelezen
   reader.addEventListener("load", () => {
     uploaded_image = reader.result;
+
+    // de foto wordt zichtbaar in de geselecteerd grid view
     const deLijst = document.querySelector(".delijst ul");
 
     var liHTML = 
@@ -151,15 +159,18 @@ image_input.addEventListener("change", function(){
    deLijst.insertAdjacentHTML("afterbegin", liHTML);
 
   });
+  // zonder deze code werkt het niet
   reader.readAsDataURL(this.files[0]);
 })
 
 /*********************/
 /* foto verwijderen */
 /********************/
-//https://swiperjs.com/get-started */
-var verwijderButtons = document.querySelectorAll(".swiper-wrapper li button");
+//https://swiperjs.com/get-started en hulp van Sanne*/
 
+/* de verwijder knop van de carousel opzoeken in de html */
+var verwijderButtons = document.querySelectorAll(".swiper-wrapper li button");
+// deze regel gelt voor elke verwijder knop en als je een add event listener toevoegd verwijderd de foto na het klikken op de knop
 verwijderButtons.forEach(verwijderButton => {
   verwijderButton.addEventListener("click", verwijderFoto);
 });
@@ -167,7 +178,9 @@ verwijderButtons.forEach(verwijderButton => {
 function verwijderFoto(event) {
   var currentButton = event.currentTarget;
   var currentLi = currentButton.closest("li");
+  // hier wordt de hele li waarin de foto zit verwijderd
   currentLi.remove();
 
+  // de teller van de carousel wordt steeds geüpdatet als je een foto verwijderd
   swiper.update();
 }

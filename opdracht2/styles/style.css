@@ -315,7 +315,7 @@ section:nth-of-type(1) {
 	margin:0 auto;
 	overflow: scroll;
 
-	padding: 3em 2em;
+	padding: 3em 10em;
 
 	position: fixed;
 	top:0;
@@ -331,9 +331,13 @@ section:nth-of-type(1) {
 section:nth-of-type(1).show {
 	scale:1;
 }
-p {
+section:nth-of-type(1) p {
+	padding-top: .5em;
+
 	font-size: 1.5em;
+	color: var(--color-label-text);
 }
+
 /* carousel open knop styling */
 header button {
 	padding: .3em 1em;
@@ -352,13 +356,11 @@ header button:hover {
 
 	transform: scale(1.1);
 }
+
 /* carousel sluit knop styling */
 .swiper > button:nth-of-type(1){
-	display: flex;
 	align-self: flex-end;
 	width: 3em;
-
-	margin-top: 3em;
 
 	border: none;
 	background-color: transparent;
@@ -367,34 +369,57 @@ header button:hover {
 	transform: scale(1.1);
 }
 
-/* sociale media iconen styling */
-section:nth-of-type(1) p:nth-of-type(1) {
+/* verwijder knop styling groot beeld*/
+.swiper-wrapper li button{
+	position: absolute;
+    bottom: 32em;
+
+    left: 5em;
+    z-index: 11;
+
+	padding: .3em 1em;
+
 	color: var(--color-text-h1);
-	margin-bottom: -.3em;
+	background-color: var(--color-background-label);
+	border: .1em solid var(--color-background-label);
+	border-radius: .3em;
 }
-section:nth-of-type(1) ul:nth-of-type(1) {
+.swiper-wrapper li button:hover{
+	border: var(--color-background-label-hover);
+	background: var(--color-swiper-button-hover);
+}
+.swiper-wrapper li button:active{
+	color: var(--color-swiper-button-active);
+	background: var(--color-focus);
+}
+
+/* sociale media iconen styling */
+section:nth-of-type(1) p:nth-of-type(2) {
+	color: var(--color-text-h1);
+	margin-top: 1em;
+}
+section:nth-of-type(1) ul:nth-of-type(2) {
 	display: flex;
 	flex-direction: row;
 }
-section:nth-of-type(1) ul:nth-of-type(1) li{
+section:nth-of-type(1) ul:nth-of-type(2) li{
 	margin-right: 1em;
 }
-section:nth-of-type(1) ul:nth-of-type(1) img{
+section:nth-of-type(1) ul:nth-of-type(2) img{
 	width: 3.5em;
 	margin-bottom: -.5em;
 }
-
-section:nth-of-type(1) ul:nth-of-type(1) img:hover {
+section:nth-of-type(1) ul:nth-of-type(2) img:hover {
 	background-color: var(--color-social-media-link);
 	border-radius: 100%;
 	border:.1em hidden transparent;
 	transform: scale(1.1);
 }
+
 /* nummering van de foto's in de carousel */
-.swiper-pagination  {
+p.swiper-pagination  {
 	position: absolute;
-	padding-top: 1em;
-	padding-bottom: .5em;
+	bottom: 7em;
 
 	text-align: center;
 	transition: .3s opacity;
@@ -403,13 +428,15 @@ section:nth-of-type(1) ul:nth-of-type(1) img:hover {
 
 	color: var(--color-text-h1);
 }
+
 /* de lijst van de carousel */
   section:nth-of-type(1) ul {
 	margin: 1em 2em;
 	padding:0;
 	list-style:none;
 	transform: scale(1.1);
-  }
+}
+
 /* foto's in de carousel */
 section:nth-of-type(1) li { 
 	height:100%;
@@ -421,18 +448,18 @@ section:nth-of-type(1) li {
 	align-items:center;
 }
 .swiper-wrapper .swiper-slide  img {
-	height:25em;
 	width: auto;
 	order:-1;
 	overflow: scroll;
-
-	border-radius: 5%;
+	padding-bottom: 1em;
+	border-radius: 9%;
 }
+
 /* terug en volgende knop styling */
 .swiper-button-prev,
 .swiper-button-next {
 	padding: 3em 4em 3em 2.3em;
-	margin: 5em 2em;
+	margin: -5em 10em;
 
     border: none;
     border-radius: 30%;
@@ -454,6 +481,7 @@ section:nth-of-type(1) li {
 	color: var(--color-swiper-button-active);
 	background: var(--color-focus);
 }
+
 
 
 /****************************/
@@ -482,7 +510,7 @@ label {
     padding: .3em 1em;
 	margin-left: .5em;
 
-    border: 0.13px solid var(--color-label-border);
+    border: 0.13em solid var(--color-label-border);
     border-radius: .3em;
 
 	background-color: var(--color-background-label);
@@ -515,14 +543,6 @@ input[type="radio"]:active + label{
 /* Zodat de eerste labels in de 2 sections geen styling hebben */
 label:nth-of-type(1){
     all: unset;
-}
-
-/* Upload een foto button styling */
-/* zorgt ervoor dat de foto bovenaan komt te staan na het uploaden*/
-.swiper-wrapper li button{
-	position: relative;
-	z-index: 11;
-	top:-1em;
 }
 
 /**************************/
@@ -634,6 +654,15 @@ section:nth-of-type(4) .sights {
 	text-align: center;
 	padding-bottom: .5em;
 }
+.sights input[type="file"] {
+	width: 9em;
+	border: .5em solid var(--color-focus);
+	border-radius: .5em;
+}
+.sights input[type="file"]:hover {
+	border: .5em solid var(--color-background-label);
+	border-radius: .5em;
+}
 
 section:nth-of-type(4) [data-view='listView']{
 	display: flex;
@@ -663,12 +692,24 @@ section:nth-of-type(4) [data-view='listView']{
 	.progress{
 		width: 16em;
 	}
+	section:nth-of-type(1){
+		padding: 2em 2.5em;
+	}
+	section:nth-of-type(1) ul {
+		margin: 0.5em 1em 1em;
+	}
 	section:nth-of-type(1) li img {
 		height: auto;
 	}
+	.swiper-wrapper li button{
+		position: relative;
+    	bottom: 25.7em;
+    	left: 0;
+		z-index: 15;
+	}
 	.swiper-button-prev, .swiper-button-next{
 		padding: 3em 4em 3em 2em;
-		margin: 6em 0em;
+		margin: 10.5em 5em;
 		font-size: .7em;
 	}
 	aside {
@@ -694,6 +735,9 @@ section:nth-of-type(4) [data-view='listView']{
 	section:nth-of-type(4) .sights {
 		display: flex;
 		align-items: center;	
+	}
+	.sights input[type="file"] {
+		width: 5.5em;
 	}
 }
 /* styling grote scherm */
