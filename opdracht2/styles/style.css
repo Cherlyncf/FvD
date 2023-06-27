@@ -176,7 +176,7 @@ img {
 	flex-direction: column;
 	align-items: center;
 
-	z-index: 100;
+	z-index: 1000;
 	position : fixed;
 	top : 50%;
 	left : 50%;
@@ -191,7 +191,6 @@ img {
 	cursor: wait;
 
 
-	display:none; /* niet vergeten weer aan te zetten */
 }
 .splash span {
 	display: flex;
